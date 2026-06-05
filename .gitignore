@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.py[cod]
+
+# Local OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Large raw NASA cycle files are kept locally; avoid accidentally committing bulk data.
+Nasa/cleaned_dataset/data/*.csv
+Nasa/
+data/
+.venv/
+__pycache__/
+.ipynb_checkpoints/

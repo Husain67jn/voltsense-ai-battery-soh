@@ -1,0 +1,101 @@
+{
+  "target": "SOH = Capacity / 2.0 Ah, filtered to 0.5 <= SOH <= 1.2",
+  "target_strategy": "rated_capacity",
+  "split_strategy": "GroupShuffleSplit by battery_id",
+  "random_state": 42,
+  "n_rows": 2307,
+  "n_features": 23,
+  "train_rows": 2006,
+  "test_rows": 301,
+  "train_batteries": [
+    "B0005",
+    "B0006",
+    "B0007",
+    "B0018",
+    "B0025",
+    "B0026",
+    "B0027",
+    "B0028",
+    "B0030",
+    "B0031",
+    "B0032",
+    "B0033",
+    "B0034",
+    "B0036",
+    "B0039",
+    "B0040",
+    "B0041",
+    "B0043",
+    "B0045",
+    "B0046",
+    "B0048",
+    "B0051",
+    "B0052",
+    "B0053",
+    "B0054",
+    "B0055",
+    "B0056"
+  ],
+  "test_batteries": [
+    "B0029",
+    "B0038",
+    "B0042",
+    "B0044",
+    "B0047",
+    "B0049",
+    "B0050"
+  ],
+  "feature_columns": [
+    "ambient_temperature",
+    "cycle_index",
+    "voltage_mean",
+    "voltage_min",
+    "voltage_max",
+    "voltage_std",
+    "current_mean",
+    "current_min",
+    "current_max",
+    "current_std",
+    "temperature_mean",
+    "temperature_min",
+    "temperature_max",
+    "temperature_std",
+    "voltage_load_mean",
+    "voltage_load_min",
+    "voltage_load_max",
+    "voltage_load_std",
+    "current_load_mean",
+    "current_load_min",
+    "current_load_max",
+    "current_load_std",
+    "discharge_duration"
+  ],
+  "models": {
+    "baseline_mean": {
+      "MAE": 0.09571091114623598,
+      "RMSE": 0.11362813610521787,
+      "R2": -0.0008079468844881532
+    },
+    "ridge_regression": {
+      "MAE": 0.03974755981150384,
+      "RMSE": 0.05049350960669469,
+      "R2": 0.8023712629387847
+    },
+    "random_forest": {
+      "MAE": 0.03117511741013251,
+      "RMSE": 0.06030861145867361,
+      "R2": 0.7180723713408248
+    },
+    "hist_gradient_boosting": {
+      "MAE": 0.02765926849172532,
+      "RMSE": 0.04534982266260303,
+      "R2": 0.8405846394177081
+    }
+  },
+  "best_model": "hist_gradient_boosting",
+  "best_model_metrics": {
+    "MAE": 0.02765926849172532,
+    "RMSE": 0.04534982266260303,
+    "R2": 0.8405846394177081
+  }
+}

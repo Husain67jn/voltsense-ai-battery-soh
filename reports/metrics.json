@@ -1,0 +1,100 @@
+{
+  "target": "SOH = Capacity / first valid discharge Capacity per battery_id",
+  "split_strategy": "GroupShuffleSplit by battery_id",
+  "random_state": 42,
+  "n_rows": 2750,
+  "n_features": 23,
+  "train_rows": 2328,
+  "test_rows": 422,
+  "train_batteries": [
+    "B0005",
+    "B0006",
+    "B0007",
+    "B0018",
+    "B0025",
+    "B0026",
+    "B0027",
+    "B0028",
+    "B0030",
+    "B0031",
+    "B0032",
+    "B0033",
+    "B0034",
+    "B0036",
+    "B0039",
+    "B0040",
+    "B0041",
+    "B0043",
+    "B0045",
+    "B0046",
+    "B0048",
+    "B0051",
+    "B0052",
+    "B0053",
+    "B0054",
+    "B0055",
+    "B0056"
+  ],
+  "test_batteries": [
+    "B0029",
+    "B0038",
+    "B0042",
+    "B0044",
+    "B0047",
+    "B0049",
+    "B0050"
+  ],
+  "feature_columns": [
+    "ambient_temperature",
+    "cycle_index",
+    "voltage_mean",
+    "voltage_min",
+    "voltage_max",
+    "voltage_std",
+    "current_mean",
+    "current_min",
+    "current_max",
+    "current_std",
+    "temperature_mean",
+    "temperature_min",
+    "temperature_max",
+    "temperature_std",
+    "voltage_load_mean",
+    "voltage_load_min",
+    "voltage_load_max",
+    "voltage_load_std",
+    "current_load_mean",
+    "current_load_min",
+    "current_load_max",
+    "current_load_std",
+    "discharge_duration"
+  ],
+  "models": {
+    "baseline_mean": {
+      "MAE": 2.342103885860365,
+      "RMSE": 2.4054793679944337,
+      "R2": -18.231333842285245
+    },
+    "ridge_regression": {
+      "MAE": 4.007146684938301,
+      "RMSE": 5.383516978636854,
+      "R2": -95.32484272418951
+    },
+    "random_forest": {
+      "MAE": 0.9717119359627797,
+      "RMSE": 2.37532436932901,
+      "R2": -17.752189501175277
+    },
+    "hist_gradient_boosting": {
+      "MAE": 1.1985859647372956,
+      "RMSE": 3.0675990936595166,
+      "R2": -30.275433352727774
+    }
+  },
+  "best_model": "random_forest",
+  "best_model_metrics": {
+    "MAE": 0.9717119359627797,
+    "RMSE": 2.37532436932901,
+    "R2": -17.752189501175277
+  }
+}
